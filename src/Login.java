@@ -5,7 +5,7 @@ import java.util.Scanner;
  */
 public class Login {
 
-    // login user
+    // login usersyujyuj
     public static User loginUser(User[] users){
         Scanner in = new Scanner(System.in);
         String userName, userPass;
