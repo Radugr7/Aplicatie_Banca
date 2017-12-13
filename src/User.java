@@ -1,6 +1,3 @@
-/**
- * Created by Radu on 12-Dec-17.
- */
 public class User {
 
     private String userName;

@@ -1,6 +1,3 @@
-/**
- * Created by Radu on 12-Dec-17.
- */
 public class Transactions {
 
     /*public Transactions(User user, int dollars){

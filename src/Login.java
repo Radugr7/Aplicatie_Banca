@@ -1,8 +1,5 @@
 import java.util.Scanner;
 
-/**
- * Created by Radu on 12-Dec-17.
- */
 public class Login {
 
     public static User loginUser(User[] users){
