@@ -2,20 +2,20 @@ public class User {
 
     private String userName;
     private String userPassword;
-    private int ballance;
+    private int balance;
 
-    public User(String userName, String userPassword, int ballance){
+    public User(String userName, String userPassword, int balance){
         this.userName = userName;
         this.userPassword = userPassword;
-        this.ballance = ballance;
+        this.balance = balance;
     }
 
-    public int getBallance() {
-        return ballance;
+    public int getBalance() {
+        return balance;
     }
 
-    public void setBallance(int ballance) {
-        this.ballance = ballance;
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
 
@@ -33,5 +33,14 @@ public class User {
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userName='" + userName + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 }

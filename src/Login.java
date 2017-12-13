@@ -2,14 +2,15 @@ import java.util.Scanner;
 
 public class Login {
 
-    public static User loginUser(User[] users){
+    public static User loginUser(){
         Scanner in = new Scanner(System.in);
         String userName, userPass;
+        User userToBeLoggedIn = null;
         System.out.print("Username: ");
         userName = in.nextLine();
         System.out.print("Password: ");
         userPass = in.nextLine();
-        while (!verifyAccountDetails(userName, userPass, users)){
+        while ((userToBeLoggedIn = verifyAccountDetails(userName, userPass)) == null){
             System.out.println("Incorrect Username or Password. Retry:");
             System.out.print("Username: ");
             userName = in.nextLine();
@@ -17,24 +18,15 @@ public class Login {
             userPass = in.nextLine();
         }
         System.out.println(userName + " is now logged in.");
-        return getUser(userName, users);
+        return userToBeLoggedIn;
     }
 
-    public static boolean verifyAccountDetails(String name, String pass, User[] users){
-        for (User user: users) {
+    public static User verifyAccountDetails(String name, String pass){
+        for (User user: UsersFactory.users) {
             if (user.getUserName().equals(name) && user.getUserPassword().equals(pass)) {
-                return true;
+                return user;
             }
         }
-        return false;
-    }
-
-    public static User getUser(String userName, User[] users){
-        int i;
-        for (i=0;i<users.length;i++){
-            if (users[i].getUserName().equals(userName))
-                break;
-        }
-        return users[i];
+        return null;
     }
 }
